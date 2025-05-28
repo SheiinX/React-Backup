@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import Conejos from '/images/conejoides.jpg';
 import NavBarTwo from './NavBarTwo'; // Asegúrate de que la ruta de importación sea correcta
 import Contacto from './Contacto'; // Asegúrate de que la ruta de importación sea correcta

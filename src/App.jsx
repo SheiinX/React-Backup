@@ -7,13 +7,13 @@ import ProjectThree from "./pages/ProjectThree";
 import ProjectFour from "./pages/ProjectFour";
 
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<IntroPage />} />
-      <Route path='/Home' element={<HomePage />} />
+      <Route path="/" element={<IntroPage />} />
+      <Route path="/Home" element={<HomePage />} />
       <Route path="/project/:projectId" element={<SobreProyecto />} />
     </Routes>
   );

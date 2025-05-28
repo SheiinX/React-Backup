@@ -1,7 +1,7 @@
 import Burbugedon from '/images/Burbugedon.png';
 import TLM from '/images/thelastmeow.png';
 import Ocaso from '/images/ElOcaso.jpg';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const proyectos = [
   { item: 'item1', title: 'Visual Transformers', img: Burbugedon, path: '/project/item1' },
