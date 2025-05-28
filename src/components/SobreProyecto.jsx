@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import Conejos from '/images/conejoides.jpg';
+import NavBarTwo from './NavBarTwo'; // Asegúrate de que la ruta de importación sea correcta
+import Contacto from './Contacto'; // Asegúrate de que la ruta de importación sea correcta
 
 const proyectosInfo = {
   item1: {
@@ -54,8 +56,12 @@ const SobreProyecto = () => {
 
   if (!projectId || !proyectosInfo[projectId]) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <h1 className="text-4xl text-error">Proyecto no encontrado</h1>
+      <div className="flex flex-col min-h-screen">
+        <NavBarTwo />
+        <div className="flex-grow flex justify-center items-center">
+          <h1 className="text-4xl text-error">Proyecto no encontrado</h1>
+        </div>
+        <Contacto />
       </div>
     );
   }
@@ -63,57 +69,66 @@ const SobreProyecto = () => {
   const project = proyectosInfo[projectId];
 
   return (
-    <section id='about-project' className='pt-20'>
-      <h1 className='text-8xl flex items-center justify-center text-info'>
-        {project.title}
-      </h1>
-      <div className='divider divider-info'></div>
+    <div className="flex flex-col min-h-screen">
+      <NavBarTwo />
+      
+      <section id='about-project' className='pt-20 flex-grow'>
+        <h1 className='text-8xl flex items-center justify-center text-info'>
+          {project.title}
+        </h1>
+        <div className='divider divider-info'></div>
 
-      <div className='hero'>
-        <div className='hero-content flex-col lg:flex-row'>
-          <img
-            src={project.img}
-            alt={`Imagen del proyecto ${project.title}`}
-            className='rounded-lg shadow-2xl w-xs sm:w-xl'
-          />
-          <div>
-            <h1 className='text-6xl font-bold mx-10 my-10 text-warning'>Sobre</h1>
-            <p className='mx-10'>{project.sobre}</p>
+        {/* Sección About - Coincide con href="#about" */}
+        <div id='about' className='hero scroll-mt-20'>
+          <div className='hero-content flex-col lg:flex-row'>
+            <img
+              src={project.img}
+              alt={`Imagen del proyecto ${project.title}`}
+              className='rounded-lg shadow-2xl w-xs sm:w-xl'
+            />
+            <div>
+              <h1 className='text-6xl font-bold mx-10 my-10 text-warning'>Sobre</h1>
+              <p className='mx-10'>{project.sobre}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className='hero'>
-        <div className='hero-content flex-col lg:flex-row'>
-          <div className='w-full lg:w-1/2 mx-10'>
-            <h1 className='text-6xl my-10 font-bold text-warning'>Información Proyecto</h1>
-            <p className='text-2xl'>
-              Rol: {project.infoProyecto.rol} <br />
-              Motor: {project.infoProyecto.motor} <br />
-              Lenguaje: {project.infoProyecto.lenguaje}
-            </p>
-          </div>
-          <div className='w-full lg:w-1/2 mx-10'>
-            <h1 className='text-6xl my-10 font-bold text-warning'>Miembros</h1>
-            <p className='text-2xl'>{project.miembros}</p>
+        {/* Sección Proyectos (Información) - Coincide con href="#proyectos" */}
+        <div id='proyectos' className='hero scroll-mt-20'>
+          <div className='hero-content flex-col lg:flex-row'>
+            <div className='w-full lg:w-1/2 mx-10'>
+              <h1 className='text-6xl my-10 font-bold text-warning'>Información Proyecto</h1>
+              <p className='text-2xl'>
+                Rol: {project.infoProyecto.rol} <br />
+                Motor: {project.infoProyecto.motor} <br />
+                Lenguaje: {project.infoProyecto.lenguaje}
+              </p>
+            </div>
+            <div className='w-full lg:w-1/2 mx-10'>
+              <h1 className='text-6xl my-10 font-bold text-warning'>Miembros</h1>
+              <p className='text-2xl'>{project.miembros}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className='hero'>
-        <div className='hero-content flex-col lg:flex-row'>
-          <div>
-            <h1 className='text-6xl font-bold mx-10 my-2 text-warning'>Cartografía</h1>
-            <p className='py-6 text-xl mx-6.5'>{project.cartografia}</p>
+        {/* Sección Contacto (Aporte) - Coincide con href="#contacto" */}
+        <div id='contacto' className='hero scroll-mt-20'>
+          <div className='hero-content flex-col lg:flex-row'>
+            <div>
+              <h1 className='text-6xl font-bold mx-10 my-2 text-warning'>Cartografía</h1>
+              <p className='py-6 text-xl mx-6.5'>{project.cartografia}</p>
+            </div>
+            <img
+              src={project.img}
+              alt={`Cartografía del proyecto ${project.title}`}
+              className='rounded-lg shadow-2xl w-xs sm:w-xl'
+            />
           </div>
-          <img
-            src={project.img}
-            alt={`Cartografía del proyecto ${project.title}`}
-            className='rounded-lg shadow-2xl w-xs sm:w-xl'
-          />
         </div>
-      </div>
-    </section>
+      </section>
+
+      <Contacto />
+    </div>
   );
 };
 

@@ -46,11 +46,6 @@ const NavBarTwo = () => {
                   Aporte
                 </a>
               </li>
-              <li>
-                <a href='#contacto' className='text-xl'>
-                  Miembros
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -70,11 +65,6 @@ const NavBarTwo = () => {
             <li>
               <button className='btn btn-outline mx-3'>
                 <a href='#contacto'>Aporte</a>
-              </button>
-            </li>
-            <li>
-              <button className='btn btn-outline mx-3'>
-                <a href='#contacto'>Miembros</a>
               </button>
             </li>
           </ul>
