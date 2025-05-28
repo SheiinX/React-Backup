@@ -29,20 +29,20 @@ const NavBarTwo = () => {
             </div>
             <ul
               tabIndex={0}
-              className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
+              className='menu menu-sm dropdown-content bg-neutral text-neutral-content rounded-box z-50 mt-3 w-52 p-2 shadow'
             >
               <li>
-                <a href='#about' className='text-xl'>
+                <a href='#about' className='text-xl hover:bg-neutral-focus'>
                   Acerda de
                 </a>
               </li>
               <li>
-                <a href='#proyectos' className='text-xl'>
+                <a href='#proyectos' className='text-xl hover:bg-neutral-focus'>
                   Informacion
                 </a>
               </li>
               <li>
-                <a href='#contacto' className='text-xl'>
+                <a href='#contacto' className='text-xl hover:bg-neutral-focus'>
                   Aporte
                 </a>
               </li>
