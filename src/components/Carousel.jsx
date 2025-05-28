@@ -40,9 +40,11 @@ const Carousel = () => {
         ))}
       </div>
       <div className='flex w-full justify-center gap-2 py-2'>
-        <a href='#item1' className='btn btn-s'>1</a>
-        <a href='#item2' className='btn btn-s'>2</a>
-        <a href='#item3' className='btn btn-s'>3</a>
+        {proyectos.map((item, index) => (
+          <a key={item.item} href={`#${item.item}`} className='btn btn-s'>
+            {index + 1}
+          </a>
+        ))}
       </div>
     </section>
   );

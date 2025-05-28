@@ -1,6 +1,7 @@
 import IntroPage from './pages/IntroPage';
 import HomePage from './pages/HomePage';
 import ProjectOne from './pages/ProjectOne';
+import SobreProyecto from './components/SobreProyecto';
 import ProjectTwo from './pages/ProjectTwo';
 import ProjectThree from "./pages/ProjectThree";
 import ProjectFour from "./pages/ProjectFour";
@@ -13,7 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<IntroPage />} />
       <Route path='/Home' element={<HomePage />} />
-      <Route path="/project/:projectId" element={<ProjectOne />} />
+      <Route path="/project/:projectId" element={<SobreProyecto />} />
     </Routes>
   );
 }

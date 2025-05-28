@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import Conejos from '/images/conejoides.jpg';
 
 const proyectosInfo = {
@@ -48,8 +49,18 @@ const proyectosInfo = {
   },
 };
 
-const SobreProyecto = ({ projectId }) => {
-  const project = proyectosInfo[projectId] || proyectosInfo.item1;
+const SobreProyecto = () => {
+  const { projectId } = useParams();
+
+  if (!projectId || !proyectosInfo[projectId]) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-4xl text-error">Proyecto no encontrado</h1>
+      </div>
+    );
+  }
+
+  const project = proyectosInfo[projectId];
 
   return (
     <section id='about-project' className='pt-20'>
